@@ -26,19 +26,29 @@ console.log(newCities())
   //      "closes over" the `count` variable. It can "see" it in the parent scope!
   // 3- Return the `counter` function.
 
+  
   let count =0;
+  let countEnd =3;
 
-const counterMaker = () => {
+  function limitedCounter(){
+     count++;
 
-  const counter = () => {
-    return count++
+      if(count <= countEnd){
+        return count
+      }
+
+      else{
+        count = 0;
+        return count;
+      }
+ 
   }
 
-  return counter();
-
-};
-
-console.log(counterMaker());
+  // console.log(limitedCounter());
+  // console.log(limitedCounter())
+  // console.log(limitedCounter())
+  // console.log(limitedCounter())
+  // console.log(limitedCounter())
 
 // Example usage: const myCounter = counterMaker();
 // myCounter(); // 1
