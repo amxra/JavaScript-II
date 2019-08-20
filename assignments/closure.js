@@ -26,29 +26,18 @@ console.log(newCities())
   //      "closes over" the `count` variable. It can "see" it in the parent scope!
   // 3- Return the `counter` function.
 
-  
   let count =0;
-  let countEnd =3;
 
-  function limitedCounter(){
-     count++;
+   const counterMaker = () => {
 
-      if(count <= countEnd){
-        return count
-      }
+ const counter = () => {
+   return count++
+ }
 
-      else{
-        count = 0;
-        return count;
-      }
- 
-  }
+ return counter();
 
-  // console.log(limitedCounter());
-  // console.log(limitedCounter())
-  // console.log(limitedCounter())
-  // console.log(limitedCounter())
-  // console.log(limitedCounter())
+};
+
 
 // Example usage: const myCounter = counterMaker();
 // myCounter(); // 1
@@ -57,6 +46,32 @@ console.log(newCities())
 // ==== Challenge 3: Make `counterMaker` more sophisticated ====
 // It should have a `limit` parameter. Any counters we make with `counterMaker`
 // will refuse to go over the limit, and start back at 1.
+
+
+let countStart =0;
+let countEnd =3;
+
+function limitedCounter(){
+   countStart++;
+
+    if(countStart <= countEnd){
+      return countStart
+    }
+
+    else{
+      countStart = 1;
+      return countStart;
+    }
+
+}
+
+console.log(limitedCounter());
+console.log(limitedCounter())
+console.log(limitedCounter())
+console.log(limitedCounter())
+console.log(limitedCounter())
+console.log(limitedCounter())
+console.log(limitedCounter())
 
 
 
