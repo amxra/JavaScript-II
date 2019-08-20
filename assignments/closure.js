@@ -6,9 +6,12 @@
 
 var cities =['london', 'paris', 'lagos', 'rome'];
 
-{
-  console.log(cities);
+const newCities = () =>{
+
+  return cities.push('Miami');
 }
+
+console.log(newCities())
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
@@ -44,6 +47,8 @@ console.log(counterMaker());
 // ==== Challenge 3: Make `counterMaker` more sophisticated ====
 // It should have a `limit` parameter. Any counters we make with `counterMaker`
 // will refuse to go over the limit, and start back at 1.
+
+
 
 // ==== Challenge 4: Create a counter function with an object that can increment and decrement ====
 const counterFactory = () => {
